@@ -4,7 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c369a914-eb99-41e6-a996-06d0e30bee93" name="Changes" comment="" />
+    <list default="true" id="c369a914-eb99-41e6-a996-06d0e30bee93" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3051dfcd-1d16-4c28-a867-c48ad1ca0099.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3051dfcd-1d16-4c28-a867-c48ad1ca0099.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c2e89521-b74f-4630-b5e7-d50002eff455.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c2e89521-b74f-4630-b5e7-d50002eff455.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gen/GeneralModuleImprovement/controllers/CalculatingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gen/GeneralModuleImprovement/controllers/ImprovementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gen/GeneralModuleImprovement/entities/MapsCalculatingQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gen/GeneralModuleImprovement/entities/MapsImprovementQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gen/GeneralModuleImprovement/entities/RoundHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gen/GeneralModuleImprovement/entities/RoundHistory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gen/GeneralModuleImprovement/readers/CalculatingReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gen/GeneralModuleImprovement/readers/ImprovementReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gen/GeneralModuleImprovement/repositories/MapsCalculatingQueueRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gen/GeneralModuleImprovement/repositories/MapsImprovementQueueRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gen/GeneralModuleImprovement/services/CalculatingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gen/GeneralModuleImprovement/services/ImprovementService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/database/initDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database/initDB.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/database/testFillDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database/testFillDB.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/excel/adr.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/excel/headshots.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/excel/kills.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/excel/rating20.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/java/com/gen/GeneralModuleImprovement/entities/QMapsCalculatingQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/java/com/gen/GeneralModuleImprovement/entities/QMapsCalculatingQueue.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,29 +70,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/serge/Desktop/improvement/generalModuleImprovement",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Facets",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "File.Encoding",
-    "spring.configuration.checksum": "6d136d2cb744c451f3aa0576b21493a3"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/serge/Desktop/improvement/generalModuleImprovement&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Facets&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;a1660497d44c64b972bf5db76ac1c48e&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\serge\Desktop\Spring\GeneralModule\src\main\java\com\gen\GeneralModule" />
@@ -163,7 +180,10 @@
       <workItem from="1662575092618" duration="10713000" />
       <workItem from="1662588985499" duration="1499000" />
       <workItem from="1662664504978" duration="4718000" />
-      <workItem from="1662752876839" duration="113000" />
+      <workItem from="1662752876839" duration="530000" />
+      <workItem from="1662798282385" duration="1118000" />
+      <workItem from="1662811644691" duration="386000" />
+      <workItem from="1662813631092" duration="1229000" />
     </task>
     <servers />
   </component>

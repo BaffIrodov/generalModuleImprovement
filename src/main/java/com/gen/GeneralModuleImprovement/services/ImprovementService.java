@@ -6,11 +6,10 @@ import com.gen.GeneralModuleImprovement.dtos.ImprovementRequestDto;
 import com.gen.GeneralModuleImprovement.dtos.MapsCalculatingQueueResponseDto;
 import com.gen.GeneralModuleImprovement.entities.*;
 import com.gen.GeneralModuleImprovement.entities.PlayerForce;
-import com.gen.GeneralModuleImprovement.readers.CalculatingReader;
-import com.gen.GeneralModuleImprovement.repositories.MapsCalculatingQueueRepository;
+import com.gen.GeneralModuleImprovement.readers.ImprovementReader;
+import com.gen.GeneralModuleImprovement.repositories.MapsImprovementQueueRepository;
 import com.gen.GeneralModuleImprovement.repositories.PlayerForceRepository;
-import com.gen.GeneralModuleImprovement.calculatingMethods.*;
-import com.gen.GeneralModuleImprovement.entities.MapsCalculatingQueue;
+import com.gen.GeneralModuleImprovement.entities.MapsImprovementQueue;
 import com.gen.GeneralModuleImprovement.entities.PlayerOnMapResults;
 import com.gen.GeneralModuleImprovement.entities.RoundHistory;
 import com.querydsl.core.group.GroupBy;
@@ -24,10 +23,10 @@ import java.util.stream.Collectors;
 
 @Service
 @Log4j2
-public class CalculatingService {
+public class ImprovementService {
 
     @Autowired
-    MapsCalculatingQueueRepository mapsCalculatingQueueRepository;
+    MapsImprovementQueueRepository mapsImprovementQueueRepository;
 
     @Autowired
     PlayerForceRepository playerForceRepository;
@@ -54,7 +53,7 @@ public class CalculatingService {
     StabilityCalculator stabilityCalculator;
 
     @Autowired
-    CalculatingReader calculatingReader;
+    ImprovementReader improvementReader;
 
     @Autowired
     JPAQueryFactory queryFactory;
@@ -78,17 +77,17 @@ public class CalculatingService {
         MapsCalculatingQueueResponseDto result = new MapsCalculatingQueueResponseDto();
         List<Integer> statsIds = queryFactory.from(roundHistory).select(roundHistory.idStatsMap)
                 .distinct().fetch();
-        List<MapsCalculatingQueue> resultList = new ArrayList<>();
+        List<MapsImprovementQueue> resultList = new ArrayList<>();
         statsIds.forEach(id -> {
-            if (mapsCalculatingQueueRepository.findById(id).isEmpty()) { //пишем в базу только то, что ранее записано не было
-                MapsCalculatingQueue queue = new MapsCalculatingQueue();
+            if (mapsImprovementQueueRepository.findById(id).isEmpty()) { //пишем в базу только то, что ранее записано не было
+                MapsImprovementQueue queue = new MapsImprovementQueue();
                 queue.idStatsMap = id;
                 queue.calculationTime = 0;
                 queue.processed = false;
                 resultList.add(queue);
             }
         });
-        mapsCalculatingQueueRepository.saveAll(resultList);
+        mapsImprovementQueueRepository.saveAll(resultList);
         result.mapsAddingTime = (int) (System.currentTimeMillis() - now);
         result.mapsAddingCount = statsIds.size();
         result.currentNotProcessedMaps = -1;
@@ -130,10 +129,10 @@ public class CalculatingService {
 
     public void calculateForces() {
         System.out.println("Расчет начался");
-        List<Integer> availableStatsIds = calculatingReader.getAvailableStatsIdsOrdered();
-        List<Integer> existingPlayerIds = calculatingReader
+        List<Integer> availableStatsIds = improvementReader.getAvailableStatsIdsOrdered();
+        List<Integer> existingPlayerIds = improvementReader
                 .getPlayerIdsWhoExistsInCalculatingMatches(availableStatsIds);
-        List<PlayerForce> allPlayerForces = calculatingReader.getPlayerForceListByPlayerIds(existingPlayerIds, false);
+        List<PlayerForce> allPlayerForces = improvementReader.getPlayerForceListByPlayerIds(existingPlayerIds, false);
         List<PlayerForce> newList = new ArrayList<>();
         allPlayerForces.forEach(e -> {
             newList.add(new PlayerForce(e.id, e.playerId, e.playerForce, e.playerStability, e.map));
@@ -201,11 +200,11 @@ public class CalculatingService {
 
     public void improvementTest(ImprovementRequestDto requestDto) {
         Integer testPercent = requestDto.getTestDatasetPercent();
-        List<Integer> availableStatsIdsTrain = calculatingReader.getAvailableStatsIdsOrderedDataset(testPercent, false);
-        List<Integer> availableStatsIdsTest = calculatingReader.getAvailableStatsIdsOrderedDataset(testPercent, true);
-        List<Integer> existingPlayerIds = calculatingReader
+        List<Integer> availableStatsIdsTrain = improvementReader.getAvailableStatsIdsOrderedDataset(testPercent, false);
+        List<Integer> availableStatsIdsTest = improvementReader.getAvailableStatsIdsOrderedDataset(testPercent, true);
+        List<Integer> existingPlayerIds = improvementReader
                 .getPlayerIdsWhoExistsInCalculatingMatches(availableStatsIdsTrain);
-        List<PlayerForce> allPlayerForces = calculatingReader.getPlayerForceListByPlayerIds(existingPlayerIds, true);
+        List<PlayerForce> allPlayerForces = improvementReader.getPlayerForceListByPlayerIds(existingPlayerIds, true);
         List<PlayerForce> newList = new ArrayList<>();
         allPlayerForces.forEach(e -> {
             newList.add(new PlayerForce(e.id, e.playerId, e.playerForce, e.playerStability, e.map));

@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class CalculatingReader {
+public class ImprovementReader {
 
     @Autowired
     JPAQueryFactory queryFactory;

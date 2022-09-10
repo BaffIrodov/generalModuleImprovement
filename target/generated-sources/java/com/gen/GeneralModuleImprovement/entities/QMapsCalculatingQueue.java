@@ -13,7 +13,7 @@ import com.querydsl.core.types.Path;
  * QMapsCalculatingQueue is a Querydsl query type for MapsCalculatingQueue
  */
 @Generated("com.querydsl.codegen.DefaultEntitySerializer")
-public class QMapsCalculatingQueue extends EntityPathBase<MapsCalculatingQueue> {
+public class QMapsCalculatingQueue extends EntityPathBase<MapsImprovementQueue> {
 
     private static final long serialVersionUID = 1921423345L;
 
@@ -26,15 +26,15 @@ public class QMapsCalculatingQueue extends EntityPathBase<MapsCalculatingQueue> 
     public final BooleanPath processed = createBoolean("processed");
 
     public QMapsCalculatingQueue(String variable) {
-        super(MapsCalculatingQueue.class, forVariable(variable));
+        super(MapsImprovementQueue.class, forVariable(variable));
     }
 
-    public QMapsCalculatingQueue(Path<? extends MapsCalculatingQueue> path) {
+    public QMapsCalculatingQueue(Path<? extends MapsImprovementQueue> path) {
         super(path.getType(), path.getMetadata());
     }
 
     public QMapsCalculatingQueue(PathMetadata metadata) {
-        super(MapsCalculatingQueue.class, metadata);
+        super(MapsImprovementQueue.class, metadata);
     }
 
 }
