@@ -8,9 +8,11 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
-@RequestMapping("/calculating")
+@RequestMapping("/improvement")
 @Log4j2
 public class ImprovementController {
 
@@ -20,31 +22,19 @@ public class ImprovementController {
     @Autowired
     DebugService debugService;
 
-    @GetMapping("/create-queue")
-    public MapsCalculatingQueueResponseDto createQueue() {
-        return improvementService.createQueue();
+    @GetMapping("/get-config")
+    public Map<String, Object> getConfig() {
+        return improvementService.getConfig();
     }
 
-    @GetMapping("/create-player-force-table")
-    public void createPlayerForceTable() {
-        improvementService.createPlayerForceTable();;
+    @PostMapping("/no-config")
+    public void improvementNoConfig(@RequestBody ImprovementRequestDto request) {
+        improvementService.noConfig(request);
     }
 
-    @GetMapping("/current-queue-size")
-    public MapsCalculatingQueueResponseDto getCurrentQueueSize(){
-        return improvementService.getCurrentQueueSize();
-    }
-
-    @GetMapping("/calculate-forces")
-    public long calculateForces() {
-        long now = System.currentTimeMillis();
-        improvementService.calculateForces();
-        return (System.currentTimeMillis() - now);
-    }
-
-    @PostMapping("/improvement")
-    public void improvementTest(@RequestBody ImprovementRequestDto request) {
-        improvementService.improvementTest(request);
+    @PostMapping("/with-config")
+    public void improvementWithConfig(@RequestBody ImprovementRequestDto request) {
+        improvementService.withConfig(request);
     }
 
 }
