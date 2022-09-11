@@ -2,6 +2,7 @@ package com.gen.GeneralModuleImprovement.controllers;
 
 import com.gen.GeneralModuleImprovement.dtos.ImprovementRequestDto;
 import com.gen.GeneralModuleImprovement.dtos.MapsCalculatingQueueResponseDto;
+import com.gen.GeneralModuleImprovement.dtos.PatternTemplateNumber;
 import com.gen.GeneralModuleImprovement.services.ImprovementService;
 import com.gen.GeneralModuleImprovement.services.DebugService;
 import lombok.extern.log4j.Log4j2;
@@ -41,6 +42,16 @@ public class ImprovementController {
             request.config.put(e.name, e.value);
         });
         improvementService.withConfig(request);
+    }
+
+    @PostMapping("/with-config-and-pattern")
+    public void improvementWithConfigAndPattern(@RequestBody PatternTemplateNumber patternTemplateNumber) {
+        //TODO напрямую map не посылается - хз, почему
+        patternTemplateNumber.improvementRequest.config = new HashMap<>();
+        patternTemplateNumber.improvementRequest.configList.forEach(e -> {
+            patternTemplateNumber.improvementRequest.config.put(e.name, e.value);
+        });
+        improvementService.withConfigAndPattern(patternTemplateNumber);
     }
 
 }

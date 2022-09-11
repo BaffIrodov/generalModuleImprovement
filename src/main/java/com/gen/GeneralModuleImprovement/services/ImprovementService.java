@@ -2,6 +2,7 @@ package com.gen.GeneralModuleImprovement.services;
 
 import com.gen.GeneralModuleImprovement.common.Config;
 import com.gen.GeneralModuleImprovement.dtos.ImprovementRequestDto;
+import com.gen.GeneralModuleImprovement.dtos.PatternTemplateNumber;
 import com.gen.GeneralModuleImprovement.readers.ImprovementReader;
 import com.gen.GeneralModuleImprovement.repositories.MapsCalculatingQueueRepository;
 import com.gen.GeneralModuleImprovement.repositories.PlayerForceRepository;
@@ -91,6 +92,31 @@ public class ImprovementService {
 
     public List<Long> withConfig(ImprovementRequestDto request) {
         String url = UriComponentsBuilder.fromHttpUrl(Config.calculatingUrl + "/improvement/with-config")
+                .build(false)
+                .toUriString();
+        try {
+            HttpHeaders headers = new HttpHeaders();
+            HttpEntity<?> entity = new HttpEntity<>(request, headers);
+
+            ResponseEntity<List<Long>> responseEntity = restTemplate.exchange(
+                    url,
+                    HttpMethod.POST,
+                    entity,
+                    new ParameterizedTypeReference<List<Long>>() {
+                    });
+
+            List<Long> result = responseEntity.getBody();
+            if (result == null)
+                System.out.println("Null");
+            return result;
+        } catch (Exception e) {
+            System.out.println("impossible");
+        }
+        return new ArrayList<>();
+    }
+
+    public List<Long> withConfigAndPattern(PatternTemplateNumber request) {
+        String url = UriComponentsBuilder.fromHttpUrl(Config.calculatingUrl + "/improvement/with-config-and-pattern")
                 .build(false)
                 .toUriString();
         try {
