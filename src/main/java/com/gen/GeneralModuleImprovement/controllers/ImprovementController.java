@@ -8,6 +8,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.Map;
 
 @CrossOrigin(origins = "http://localhost:4200")
@@ -34,6 +35,11 @@ public class ImprovementController {
 
     @PostMapping("/with-config")
     public void improvementWithConfig(@RequestBody ImprovementRequestDto request) {
+        //TODO напрямую map не посылается - хз, почему
+        request.config = new HashMap<>();
+        request.configList.forEach(e -> {
+            request.config.put(e.name, e.value);
+        });
         improvementService.withConfig(request);
     }
 

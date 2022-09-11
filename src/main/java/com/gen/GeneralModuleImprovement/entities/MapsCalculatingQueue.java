@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @NoArgsConstructor
-public class MapsImprovementQueue {
+public class MapsCalculatingQueue {
     @Id
     public int idStatsMap;
     public int calculationTime;
