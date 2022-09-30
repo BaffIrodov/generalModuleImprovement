@@ -14,17 +14,22 @@ public class DebugController {
     DebugService debugService;
 
     @GetMapping("/files-distribution")
-    public void filesWithDistribution(){
+    public void filesWithDistribution() {
         debugService.getFilesWithDistribution();
     }
 
     @GetMapping("/debug")
-    public void debug(){
+    public void debug() {
 //        calculatingService.debug();
     }
 
     @GetMapping("/reset-players-forces")
     public void resetPlayersForces() {
         debugService.resetAllPlayerForcesToDefault();
+    }
+
+    @GetMapping("/enabled")
+    public Boolean thisServiceEnabled() {
+        return true;
     }
 }
