@@ -3,13 +3,18 @@ package com.gen.GeneralModuleImprovement.services;
 import com.gen.GeneralModuleImprovement.entities.PlayerForce;
 import com.gen.GeneralModuleImprovement.entities.QPlayerForce;
 import com.gen.GeneralModuleImprovement.entities.QPlayerOnMapResults;
+import com.gen.GeneralModuleImprovement.entities.QRoundHistory;
 import com.gen.GeneralModuleImprovement.repositories.PlayerForceRepository;
+import com.querydsl.codegen.utils.StringUtils;
+import com.querydsl.core.types.Expression;
 import com.querydsl.core.types.dsl.NumberPath;
+import com.querydsl.jpa.impl.JPAQuery;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.FileWriter;
+import java.text.DateFormat;
 import java.util.*;
 
 import static java.lang.Math.abs;
@@ -30,13 +35,16 @@ public class DebugService {
     private static final QPlayerForce playerForce =
             new QPlayerForce("playerForce");
 
+    private static final QRoundHistory roundHistory =
+            new QRoundHistory("roundHistory");
+
     public void resetAllPlayerForcesToDefault() {
         System.out.println("Сброс всех сил плэйеров начался");
         long now = System.currentTimeMillis();
         List<PlayerForce> forces = playerForceRepository.findAll();
         List<PlayerForce> newList = new ArrayList<>();
         forces.forEach(f -> {
-            if(f.playerForce != 5f || f.playerStability != 100) {
+            if (f.playerForce != 5f || f.playerStability != 100) {
                 newList.add(new PlayerForce(f.id, f.playerId, 5f, 100, f.map));
             }
         });
@@ -136,5 +144,80 @@ public class DebugService {
                     results.stream().filter(res -> abs(res - el) < 0.00001).toList().size());
         });
         return resultsWithFrequencies;
+    }
+
+    public void mapsBalance() {
+        System.out.println("Баланс карт");
+        LinkedHashMap<String, Float> balance = new LinkedHashMap<>();
+        List<String> maps = new ArrayList<>();
+        /* Учитывать, что к году прибавляется 1900, а месяцы считаются с 0 */
+        Date date = new Date(122,2,1);
+        System.out.println(date);
+
+        balance.put("DUST2", 0f);
+        balance.put("MIRAGE", 0f);
+        balance.put("INFERNO", 0f);
+        balance.put("NUKE", 0f);
+        balance.put("OVERPASS", 0f);
+        balance.put("VERTIGO", 0f);
+        balance.put("ANCIENT", 0f);
+        balance.put("CACHE", 0f);
+        balance.put("TRAIN", 0f);
+        balance.put("TUSCAN", 0f);
+        balance.put("COBBLESTONE", 0f);
+
+        for (String mapName: balance.keySet())
+        {
+            maps.clear();
+            queryFactory.from(roundHistory).join(playerOnMapResults)
+                    .on(roundHistory.idStatsMap.eq(playerOnMapResults.idStatsMap))
+                    .select(roundHistory.roundSequence).distinct()
+                    .where(playerOnMapResults.playedMapString.eq(mapName),
+                            roundHistory.leftTeamIsTerroristsInFirstHalf.eq(true),
+                            roundHistory.dateOfMatch.after(date))
+                    .fetch().stream().forEach(elem -> {
+                        int ter = 0;
+                        if (elem.length() > 15)
+                        {
+                            for (char ch : elem.substring(0, 15).toCharArray()) {
+                                if (ch == 'L') ter++; else ter--;
+                            }
+//                            for (char ch : elem.substring(15).toCharArray()) {
+//                                if (ch == 'R') ter++; else ter--;
+//                            }
+                        } else {
+                            for (char ch : elem.toCharArray()) {
+                                if (ch == 'L') ter++; else ter--;
+                            }
+                        }
+                        maps.add(elem);
+                        balance.put(mapName, balance.get(mapName) + ter);
+                    });
+            queryFactory.from(roundHistory).join(playerOnMapResults)
+                    .on(roundHistory.idStatsMap.eq(playerOnMapResults.idStatsMap))
+                    .select(roundHistory.roundSequence).distinct()
+                    .where(playerOnMapResults.playedMapString.eq(mapName),
+                            roundHistory.leftTeamIsTerroristsInFirstHalf.eq(false),
+                            roundHistory.dateOfMatch.after(date))
+                    .fetch().stream().forEach(elem -> {
+                        int ter = 0;
+                        if (elem.length() > 15) {
+                            for (char ch : elem.substring(0, 15).toCharArray()) {
+                                if (ch == 'R') ter++; else ter--;
+                            }
+//                            for (char ch : elem.substring(15).toCharArray()) {
+//                                if (ch == 'L') ter++; else ter--;
+//                            }
+                        } else {
+                            for (char ch : elem.toCharArray()) {
+                                if (ch == 'R') ter++; else ter--;
+                            }
+                        }
+                        maps.add(elem);
+                        balance.put(mapName, balance.get(mapName) + ter);
+                    });
+            balance.put(mapName, balance.get(mapName)/maps.size());
+            System.out.println(mapName + " " + balance.get(mapName));
+        }
     }
 }

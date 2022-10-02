@@ -32,4 +32,8 @@ public class DebugController {
     public Boolean thisServiceEnabled() {
         return true;
     }
+
+    @GetMapping("/maps-balance")
+    public void mapsBalance() { debugService.mapsBalance(); }
+
 }
