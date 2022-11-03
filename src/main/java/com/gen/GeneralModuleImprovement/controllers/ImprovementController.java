@@ -29,6 +29,11 @@ public class ImprovementController {
         return improvementService.getConfig();
     }
 
+    @PostMapping("/inactive-percent")
+    public void improvementInactivePercent(@RequestBody ImprovementRequestDto request) {
+        improvementService.inactivePercent(request);
+    }
+
     @PostMapping("/no-config")
     public void improvementNoConfig(@RequestBody ImprovementRequestDto request) {
         improvementService.noConfig(request);

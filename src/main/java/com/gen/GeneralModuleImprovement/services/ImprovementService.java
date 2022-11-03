@@ -65,35 +65,35 @@ public class ImprovementService {
         return null;
     }
 
+    public List<Long> inactivePercent(ImprovementRequestDto request) {
+        String url = UriComponentsBuilder.fromHttpUrl(Config.calculatingUrl + "/improvement/inactive-percent")
+                .build(false)
+                .toUriString();
+        return standardRequest(request, url);
+    }
+
     public List<Long> noConfig(ImprovementRequestDto request) {
         String url = UriComponentsBuilder.fromHttpUrl(Config.calculatingUrl + "/improvement/no-config")
                 .build(false)
                 .toUriString();
-        try {
-            HttpHeaders headers = new HttpHeaders();
-            HttpEntity<?> entity = new HttpEntity<>(request, headers);
-
-            ResponseEntity<List<Long>> responseEntity = restTemplate.exchange(
-                    url,
-                    HttpMethod.POST,
-                    entity,
-                    new ParameterizedTypeReference<List<Long>>() {
-                    });
-
-            List<Long> result = responseEntity.getBody();
-            if (result == null)
-                System.out.println("Null");
-            return result;
-        } catch (Exception e) {
-            System.out.println("impossible");
-        }
-        return new ArrayList<>();
+        return standardRequest(request, url);
     }
 
     public List<Long> withConfig(ImprovementRequestDto request) {
         String url = UriComponentsBuilder.fromHttpUrl(Config.calculatingUrl + "/improvement/with-config")
                 .build(false)
                 .toUriString();
+        return standardRequest(request, url);
+    }
+
+    public List<Long> withConfigAndPattern(PatternTemplateNumber request) {
+        String url = UriComponentsBuilder.fromHttpUrl(Config.calculatingUrl + "/improvement/with-config-and-pattern")
+                .build(false)
+                .toUriString();
+        return patternRequest(request, url);
+    }
+
+    private List<Long> standardRequest(ImprovementRequestDto request, String url) {
         try {
             HttpHeaders headers = new HttpHeaders();
             HttpEntity<?> entity = new HttpEntity<>(request, headers);
@@ -115,10 +115,7 @@ public class ImprovementService {
         return new ArrayList<>();
     }
 
-    public List<Long> withConfigAndPattern(PatternTemplateNumber request) {
-        String url = UriComponentsBuilder.fromHttpUrl(Config.calculatingUrl + "/improvement/with-config-and-pattern")
-                .build(false)
-                .toUriString();
+    private List<Long> patternRequest(PatternTemplateNumber request, String url) {
         try {
             HttpHeaders headers = new HttpHeaders();
             HttpEntity<?> entity = new HttpEntity<>(request, headers);
