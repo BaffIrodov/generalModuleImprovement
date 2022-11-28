@@ -39,6 +39,16 @@ public class ImprovementController {
         improvementService.noConfig(request);
     }
 
+    @PostMapping("/shuffling")
+    public void improvementShuffling(@RequestBody ImprovementRequestDto request) {
+        improvementService.shuffling(request);
+    }
+
+    @PostMapping("/consensus")
+    public void improvementConsensus(@RequestBody ImprovementRequestDto request) {
+        improvementService.consensus(request);
+    }
+
     @PostMapping("/with-config")
     public void improvementWithConfig(@RequestBody ImprovementRequestDto request) {
         //TODO напрямую map не посылается - хз, почему

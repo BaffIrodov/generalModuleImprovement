@@ -79,6 +79,20 @@ public class ImprovementService {
         return standardRequest(request, url);
     }
 
+    public List<Long> shuffling(ImprovementRequestDto request) {
+        String url = UriComponentsBuilder.fromHttpUrl(Config.calculatingUrl + "/improvement/shuffling")
+                .build(false)
+                .toUriString();
+        return standardRequest(request, url);
+    }
+
+    public List<Long> consensus(ImprovementRequestDto request) {
+        String url = UriComponentsBuilder.fromHttpUrl(Config.calculatingUrl + "/improvement/consensus")
+                .build(false)
+                .toUriString();
+        return standardRequest(request, url);
+    }
+
     public List<Long> withConfig(ImprovementRequestDto request) {
         String url = UriComponentsBuilder.fromHttpUrl(Config.calculatingUrl + "/improvement/with-config")
                 .build(false)

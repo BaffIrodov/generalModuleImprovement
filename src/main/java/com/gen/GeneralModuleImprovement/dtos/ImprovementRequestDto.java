@@ -10,6 +10,7 @@ import java.util.Map;
 @NoArgsConstructor
 public class ImprovementRequestDto {
     public Integer testDatasetPercent;
+    public Integer testDatasetCount;
     public Map<String, Object> config;
     public List<ConfigAsList> configList;
 }
