@@ -161,6 +161,7 @@ public class DebugService {
         balance.put("OVERPASS", 0f);
         balance.put("VERTIGO", 0f);
         balance.put("ANCIENT", 0f);
+        balance.put("ANUBIS", 0f);
         balance.put("CACHE", 0f);
         balance.put("TRAIN", 0f);
         balance.put("TUSCAN", 0f);
