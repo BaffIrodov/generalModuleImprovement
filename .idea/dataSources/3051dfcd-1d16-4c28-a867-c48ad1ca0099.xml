@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="generalModuleCalculating/Hibernate">
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.39">
-    <root id="1"/>
+    <root id="1">
+      <ServerVersion>14.4</ServerVersion>
+      <StartupTime>1675336550</StartupTime>
+    </root>
     <database id="2" parent="1" name="postgres">
       <Comment>default administrative connection database</Comment>
       <ObjectId>13754</ObjectId>
@@ -23,7 +26,7 @@
 13388||10|C|G
 13388||-9223372036854775808|U|G
 13388||10|U|G</Grants>
-      <IntrospectionStateNumber>219271</IntrospectionStateNumber>
+      <IntrospectionStateNumber>67942</IntrospectionStateNumber>
       <ObjectId>41056</ObjectId>
       <OwnerName>postgres</OwnerName>
     </database>
@@ -3444,437 +3447,590 @@
     <schema id="263" parent="4" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>219271</IntrospectionStateNumber>
+      <IntrospectionStateNumber>67942</IntrospectionStateNumber>
       <ObjectId>2200</ObjectId>
       <StateNumber>527</StateNumber>
       <OwnerName>postgres</OwnerName>
     </schema>
     <sequence id="264" parent="263" name="sq_errors_id">
       <DataType>bigint|0s</DataType>
-      <ObjectId>90271</ObjectId>
-      <StateNumber>195799</StateNumber>
+      <ObjectId>41174</ObjectId>
+      <StateNumber>52442</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
-    <sequence id="265" parent="263" name="sq_player_force_id">
+    <sequence id="265" parent="263" name="sq_improvement_results_id">
       <DataType>bigint|0s</DataType>
-      <ObjectId>98441</ObjectId>
-      <StateNumber>219219</StateNumber>
+      <ObjectId>41205</ObjectId>
+      <StateNumber>52484</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
-    <sequence id="266" parent="263" name="sq_player_on_map_results_id">
+    <sequence id="266" parent="263" name="sq_maps_calculating_queue_id">
       <DataType>bigint|0s</DataType>
-      <ObjectId>90248</ObjectId>
-      <StateNumber>195781</StateNumber>
+      <ObjectId>16481</ObjectId>
+      <StateNumber>6921</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
-    <sequence id="267" parent="263" name="sq_results_link_id">
+    <sequence id="267" parent="263" name="sq_player_force_id">
       <DataType>bigint|0s</DataType>
-      <ObjectId>90252</ObjectId>
-      <StateNumber>195785</StateNumber>
+      <ObjectId>98470</ObjectId>
+      <StateNumber>67344</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
-    <sequence id="268" parent="263" name="sq_round_history_id">
+    <sequence id="268" parent="263" name="sq_player_on_map_results_id">
       <DataType>bigint|0s</DataType>
-      <ObjectId>90261</ObjectId>
-      <StateNumber>195791</StateNumber>
+      <ObjectId>57510</ObjectId>
+      <StateNumber>54007</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
-    <sequence id="269" parent="263" name="sq_stats_response_id">
+    <sequence id="269" parent="263" name="sq_results_link_id">
       <DataType>bigint|0s</DataType>
-      <ObjectId>90265</ObjectId>
-      <StateNumber>195795</StateNumber>
+      <ObjectId>57514</ObjectId>
+      <StateNumber>54008</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
-    <table id="270" parent="263" name="errors">
-      <ObjectId>90266</ObjectId>
-      <StateNumber>195797</StateNumber>
+    <sequence id="270" parent="263" name="sq_round_history_id">
+      <DataType>bigint|0s</DataType>
+      <ObjectId>57518</ObjectId>
+      <StateNumber>54009</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </sequence>
+    <sequence id="271" parent="263" name="sq_stats_response_id">
+      <DataType>bigint|0s</DataType>
+      <ObjectId>41198</ObjectId>
+      <StateNumber>52479</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </sequence>
+    <table id="272" parent="263" name="chat_history">
+      <ObjectId>90297</ObjectId>
+      <StateNumber>66322</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="271" parent="263" name="maps_calculating_queue">
-      <ObjectId>98435</ObjectId>
-      <StateNumber>219240</StateNumber>
+    <table id="273" parent="263" name="errors">
+      <ObjectId>41169</ObjectId>
+      <StateNumber>52442</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="272" parent="263" name="matches_link">
-      <ObjectId>90253</ObjectId>
-      <StateNumber>195787</StateNumber>
+    <table id="274" parent="263" name="improvement_results">
+      <ObjectId>41200</ObjectId>
+      <StateNumber>59078</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="273" parent="263" name="player_force">
-      <ObjectId>98438</ObjectId>
-      <StateNumber>219270</StateNumber>
+    <table id="275" parent="263" name="maps_calculating_queue">
+      <ObjectId>98471</ObjectId>
+      <StateNumber>67345</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="274" parent="263" name="player_on_map_results">
-      <ObjectId>90243</ObjectId>
-      <StateNumber>195779</StateNumber>
+    <table id="276" parent="263" name="matches_link">
+      <ObjectId>90282</ObjectId>
+      <StateNumber>66248</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="275" parent="263" name="results_link">
-      <ObjectId>90249</ObjectId>
-      <StateNumber>195783</StateNumber>
+    <table id="277" parent="263" name="player_force">
+      <ObjectId>98465</ObjectId>
+      <StateNumber>67344</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="276" parent="263" name="round_history">
-      <ObjectId>90258</ObjectId>
-      <StateNumber>195789</StateNumber>
+    <table id="278" parent="263" name="player_on_map_results">
+      <ObjectId>57505</ObjectId>
+      <StateNumber>59090</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="277" parent="263" name="stats_response">
-      <ObjectId>90262</ObjectId>
-      <StateNumber>195793</StateNumber>
+    <table id="279" parent="263" name="results_link">
+      <ObjectId>57511</ObjectId>
+      <StateNumber>59092</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <column id="278" parent="270" name="id">
+    <table id="280" parent="263" name="round_history">
+      <ObjectId>57515</ObjectId>
+      <StateNumber>59095</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>postgres</OwnerName>
+    </table>
+    <table id="281" parent="263" name="statistic_result">
+      <ObjectId>32929</ObjectId>
+      <StateNumber>59097</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>postgres</OwnerName>
+    </table>
+    <table id="282" parent="263" name="stats_response">
+      <ObjectId>41195</ObjectId>
+      <StateNumber>59099</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>postgres</OwnerName>
+    </table>
+    <column id="283" parent="272" name="message_id">
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>195797</StateNumber>
+      <StateNumber>66322</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="279" parent="270" name="class_and_line">
+    <column id="284" parent="272" name="user_id">
       <DataType>varchar(200)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>195797</StateNumber>
+      <StateNumber>66322</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="280" parent="270" name="description_error">
+    <column id="285" parent="272" name="first_name">
       <DataType>varchar(200)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
-      <StateNumber>195797</StateNumber>
+      <StateNumber>66322</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="281" parent="270" name="verification_error">
+    <column id="286" parent="272" name="last_name">
+      <DataType>varchar(200)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StateNumber>66322</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="287" parent="272" name="user_name">
+      <DataType>varchar(200)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+      <StateNumber>66322</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="288" parent="272" name="message">
+      <DataType>varchar(2000)|0s</DataType>
+      <Position>6</Position>
+      <StateNumber>66322</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="289" parent="273" name="id">
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>52442</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="290" parent="273" name="class_and_line">
+      <DataType>varchar(200)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StateNumber>52442</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="291" parent="273" name="description_error">
+      <DataType>varchar(200)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StateNumber>52442</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="292" parent="273" name="verification_error">
       <DataType>boolean|0s</DataType>
       <Position>4</Position>
-      <StateNumber>195797</StateNumber>
+      <StateNumber>52442</StateNumber>
       <TypeId>16</TypeId>
     </column>
-    <column id="282" parent="270" name="payload">
+    <column id="293" parent="273" name="payload">
       <DataType>varchar(200)|0s</DataType>
       <Position>5</Position>
-      <StateNumber>195797</StateNumber>
+      <StateNumber>52442</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="283" parent="270" name="date_time">
+    <column id="294" parent="273" name="date_time">
       <DataType>timestamp|0s</DataType>
       <Position>6</Position>
-      <StateNumber>195797</StateNumber>
+      <StateNumber>52442</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="284" parent="271" name="id_stats_map">
+    <column id="295" parent="274" name="id">
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>219215</StateNumber>
+      <StateNumber>52484</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="285" parent="271" name="calculation_time">
+    <column id="296" parent="274" name="accuracy">
+      <DataType>double precision|0s</DataType>
+      <Position>2</Position>
+      <StateNumber>52484</StateNumber>
+      <TypeId>701</TypeId>
+    </column>
+    <column id="297" parent="274" name="current_epoch">
+      <DataType>bigint|0s</DataType>
+      <Position>3</Position>
+      <StateNumber>52484</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="298" parent="274" name="right_count">
+      <DataType>bigint|0s</DataType>
+      <Position>4</Position>
+      <StateNumber>52484</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="299" parent="274" name="all_count">
+      <DataType>bigint|0s</DataType>
+      <Position>5</Position>
+      <StateNumber>52484</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="300" parent="274" name="full_config">
+      <DataType>varchar(4000)|0s</DataType>
+      <Position>6</Position>
+      <StateNumber>52484</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="301" parent="275" name="id_stats_map">
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>67345</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="302" parent="275" name="calculation_time">
       <DataType>bigint|0s</DataType>
       <Position>2</Position>
-      <StateNumber>219215</StateNumber>
+      <StateNumber>67345</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="286" parent="271" name="processed">
+    <column id="303" parent="275" name="processed">
       <DataType>boolean|0s</DataType>
       <Position>3</Position>
-      <StateNumber>219215</StateNumber>
+      <StateNumber>67345</StateNumber>
       <TypeId>16</TypeId>
     </column>
-    <column id="287" parent="272" name="match_id">
+    <column id="304" parent="276" name="match_id">
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>195787</StateNumber>
+      <StateNumber>66248</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="288" parent="272" name="match_url">
+    <column id="305" parent="276" name="match_url">
       <DataType>varchar(200)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>195787</StateNumber>
+      <StateNumber>66248</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="289" parent="272" name="left_team">
+    <column id="306" parent="276" name="left_team">
       <DataType>varchar(200)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
-      <StateNumber>195787</StateNumber>
+      <StateNumber>66248</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="290" parent="272" name="right_team">
+    <column id="307" parent="276" name="right_team">
       <DataType>varchar(200)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
-      <StateNumber>195787</StateNumber>
+      <StateNumber>66248</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="291" parent="272" name="match_format">
+    <column id="308" parent="276" name="match_format">
       <DataType>varchar(200)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
-      <StateNumber>195787</StateNumber>
+      <StateNumber>66248</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="292" parent="272" name="match_maps_names">
+    <column id="309" parent="276" name="match_maps_names">
       <DataType>varchar(200)|0s</DataType>
       <Position>6</Position>
-      <StateNumber>195787</StateNumber>
+      <StateNumber>66248</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="293" parent="272" name="left_team_odds">
+    <column id="310" parent="276" name="left_team_odds">
       <DataType>varchar(200)|0s</DataType>
       <Position>7</Position>
-      <StateNumber>195787</StateNumber>
+      <StateNumber>66248</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="294" parent="272" name="right_team_odds">
+    <column id="311" parent="276" name="right_team_odds">
       <DataType>varchar(200)|0s</DataType>
       <Position>8</Position>
-      <StateNumber>195787</StateNumber>
+      <StateNumber>66248</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="295" parent="272" name="match_time">
+    <column id="312" parent="276" name="match_time">
       <DataType>bigint|0s</DataType>
       <Position>9</Position>
-      <StateNumber>195787</StateNumber>
+      <StateNumber>66248</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="296" parent="273" name="id">
+    <column id="313" parent="276" name="already_bet">
+      <DataType>bigint|0s</DataType>
+      <Position>10</Position>
+      <StateNumber>66248</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="314" parent="276" name="dont_show">
+      <DataType>boolean|0s</DataType>
+      <Position>11</Position>
+      <StateNumber>66248</StateNumber>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="315" parent="277" name="id">
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>219217</StateNumber>
+      <StateNumber>67344</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="297" parent="273" name="player_id">
+    <column id="316" parent="277" name="player_id">
       <DataType>bigint|0s</DataType>
       <Position>2</Position>
-      <StateNumber>219217</StateNumber>
+      <StateNumber>67344</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="298" parent="273" name="player_force">
+    <column id="317" parent="277" name="player_force">
       <DataType>double precision|0s</DataType>
       <Position>3</Position>
-      <StateNumber>219217</StateNumber>
+      <StateNumber>67344</StateNumber>
       <TypeId>701</TypeId>
     </column>
-    <column id="299" parent="273" name="player_stability">
+    <column id="318" parent="277" name="player_stability">
       <DataType>bigint|0s</DataType>
       <Position>4</Position>
-      <StateNumber>219217</StateNumber>
+      <StateNumber>67344</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="300" parent="273" name="map">
+    <column id="319" parent="277" name="map">
       <DataType>varchar(20)|0s</DataType>
       <Position>5</Position>
-      <StateNumber>219217</StateNumber>
+      <StateNumber>67344</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="301" parent="274" name="id">
+    <column id="320" parent="277" name="lose_strike">
+      <DataType>bigint|0s</DataType>
+      <DefaultExpression>0</DefaultExpression>
+      <Position>6</Position>
+      <StateNumber>67344</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="321" parent="277" name="win_strike">
+      <DataType>bigint|0s</DataType>
+      <DefaultExpression>0</DefaultExpression>
+      <Position>7</Position>
+      <StateNumber>67344</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="322" parent="278" name="id">
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>195779</StateNumber>
+      <StateNumber>54007</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="302" parent="274" name="player_id">
+    <column id="323" parent="278" name="player_id">
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>195779</StateNumber>
+      <StateNumber>54007</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="303" parent="274" name="id_stats_map">
+    <column id="324" parent="278" name="id_stats_map">
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
-      <StateNumber>195779</StateNumber>
+      <StateNumber>54007</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="304" parent="274" name="url">
+    <column id="325" parent="278" name="url">
       <DataType>varchar(200)|0s</DataType>
       <Position>4</Position>
-      <StateNumber>195779</StateNumber>
+      <StateNumber>54007</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="305" parent="274" name="player_name">
+    <column id="326" parent="278" name="player_name">
       <DataType>varchar(200)|0s</DataType>
       <Position>5</Position>
-      <StateNumber>195779</StateNumber>
+      <StateNumber>54007</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="306" parent="274" name="date_of_match">
+    <column id="327" parent="278" name="date_of_match">
       <DataType>date|0s</DataType>
       <Position>6</Position>
-      <StateNumber>195779</StateNumber>
+      <StateNumber>54007</StateNumber>
       <TypeId>1082</TypeId>
     </column>
-    <column id="307" parent="274" name="played_map">
+    <column id="328" parent="278" name="played_map">
       <DataType>varchar(200)|0s</DataType>
       <Position>7</Position>
-      <StateNumber>195779</StateNumber>
+      <StateNumber>54007</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="308" parent="274" name="played_map_string">
+    <column id="329" parent="278" name="played_map_string">
       <DataType>varchar(200)|0s</DataType>
       <Position>8</Position>
-      <StateNumber>195779</StateNumber>
+      <StateNumber>54007</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="309" parent="274" name="team">
+    <column id="330" parent="278" name="team">
       <DataType>varchar(200)|0s</DataType>
       <Position>9</Position>
-      <StateNumber>195779</StateNumber>
+      <StateNumber>54007</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="310" parent="274" name="team_winner">
+    <column id="331" parent="278" name="team_winner">
       <DataType>varchar(200)|0s</DataType>
       <Position>10</Position>
-      <StateNumber>195779</StateNumber>
+      <StateNumber>54007</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="311" parent="274" name="kills">
+    <column id="332" parent="278" name="kills">
       <DataType>bigint|0s</DataType>
       <Position>11</Position>
-      <StateNumber>195779</StateNumber>
+      <StateNumber>54007</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="312" parent="274" name="assists">
+    <column id="333" parent="278" name="assists">
       <DataType>bigint|0s</DataType>
       <Position>12</Position>
-      <StateNumber>195779</StateNumber>
+      <StateNumber>54007</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="313" parent="274" name="deaths">
+    <column id="334" parent="278" name="deaths">
       <DataType>bigint|0s</DataType>
       <Position>13</Position>
-      <StateNumber>195779</StateNumber>
+      <StateNumber>54007</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="314" parent="274" name="kd">
+    <column id="335" parent="278" name="kd">
       <DataType>double precision|0s</DataType>
       <Position>14</Position>
-      <StateNumber>195779</StateNumber>
+      <StateNumber>54007</StateNumber>
       <TypeId>701</TypeId>
     </column>
-    <column id="315" parent="274" name="headshots">
+    <column id="336" parent="278" name="headshots">
       <DataType>bigint|0s</DataType>
       <Position>15</Position>
-      <StateNumber>195779</StateNumber>
+      <StateNumber>54007</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="316" parent="274" name="adr">
+    <column id="337" parent="278" name="adr">
       <DataType>double precision|0s</DataType>
       <Position>16</Position>
-      <StateNumber>195779</StateNumber>
+      <StateNumber>54007</StateNumber>
       <TypeId>701</TypeId>
     </column>
-    <column id="317" parent="274" name="rating20">
+    <column id="338" parent="278" name="rating20">
       <DataType>double precision|0s</DataType>
       <Position>17</Position>
-      <StateNumber>195779</StateNumber>
+      <StateNumber>54007</StateNumber>
       <TypeId>701</TypeId>
     </column>
-    <column id="318" parent="274" name="cast20">
+    <column id="339" parent="278" name="cast20">
       <DataType>double precision|0s</DataType>
       <Position>18</Position>
-      <StateNumber>195779</StateNumber>
+      <StateNumber>54007</StateNumber>
       <TypeId>701</TypeId>
     </column>
-    <column id="319" parent="275" name="result_id">
+    <column id="340" parent="279" name="result_id">
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>195783</StateNumber>
+      <StateNumber>54008</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="320" parent="275" name="result_url">
+    <column id="341" parent="279" name="result_url">
       <DataType>varchar(200)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>195783</StateNumber>
+      <StateNumber>54008</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="321" parent="275" name="processed">
+    <column id="342" parent="279" name="processed">
       <DataType>boolean|0s</DataType>
       <Position>3</Position>
-      <StateNumber>195783</StateNumber>
+      <StateNumber>54008</StateNumber>
       <TypeId>16</TypeId>
     </column>
-    <column id="322" parent="275" name="archive">
+    <column id="343" parent="279" name="archive">
       <DataType>boolean|0s</DataType>
       <Position>4</Position>
-      <StateNumber>195783</StateNumber>
+      <StateNumber>54008</StateNumber>
       <TypeId>16</TypeId>
     </column>
-    <column id="323" parent="276" name="id">
+    <column id="344" parent="280" name="id">
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>195789</StateNumber>
+      <StateNumber>54009</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="324" parent="276" name="id_stats_map">
+    <column id="345" parent="280" name="id_stats_map">
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>195789</StateNumber>
+      <StateNumber>54009</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="325" parent="276" name="date_of_match">
+    <column id="346" parent="280" name="date_of_match">
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
-      <StateNumber>195789</StateNumber>
+      <StateNumber>54009</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="326" parent="276" name="round_sequence">
+    <column id="347" parent="280" name="round_sequence">
       <DataType>varchar(200)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
-      <StateNumber>195789</StateNumber>
+      <StateNumber>54009</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="327" parent="276" name="left_team_is_terrorists_in_first_half">
+    <column id="348" parent="280" name="left_team_is_terrorists_in_first_half">
       <DataType>boolean|0s</DataType>
       <Position>5</Position>
-      <StateNumber>195789</StateNumber>
+      <StateNumber>54009</StateNumber>
       <TypeId>16</TypeId>
     </column>
-    <column id="328" parent="277" name="id">
+    <column id="349" parent="281" name="stats_id">
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>195793</StateNumber>
+      <StateNumber>52175</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="329" parent="277" name="batch_size">
+    <column id="350" parent="281" name="team_winner">
+      <DataType>varchar(10)|0s</DataType>
+      <Position>2</Position>
+      <StateNumber>52175</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="351" parent="281" name="odd">
+      <DataType>double precision|0s</DataType>
+      <Position>3</Position>
+      <StateNumber>52175</StateNumber>
+      <TypeId>701</TypeId>
+    </column>
+    <column id="352" parent="282" name="id">
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>52479</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="353" parent="282" name="batch_size">
       <DataType>bigint|0s</DataType>
       <Position>2</Position>
-      <StateNumber>195793</StateNumber>
+      <StateNumber>52479</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="330" parent="277" name="batch_time">
+    <column id="354" parent="282" name="batch_time">
       <DataType>bigint|0s</DataType>
       <Position>3</Position>
-      <StateNumber>195793</StateNumber>
+      <StateNumber>52479</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="331" parent="277" name="request_date">
+    <column id="355" parent="282" name="request_date">
       <DataType>timestamp|0s</DataType>
       <Position>4</Position>
-      <StateNumber>195793</StateNumber>
+      <StateNumber>52479</StateNumber>
       <TypeId>1114</TypeId>
     </column>
   </database-model>

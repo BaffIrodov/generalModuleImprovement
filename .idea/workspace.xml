@@ -5,22 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c369a914-eb99-41e6-a996-06d0e30bee93" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/3051dfcd-1d16-4c28-a867-c48ad1ca0099.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3051dfcd-1d16-4c28-a867-c48ad1ca0099.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3051dfcd-1d16-4c28-a867-c48ad1ca0099/storage_v2/_src_/database/generalModuleDB.8siLEw/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3051dfcd-1d16-4c28-a867-c48ad1ca0099/storage_v2/_src_/database/generalModuleDB.8siLEw/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/c2e89521-b74f-4630-b5e7-d50002eff455.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c2e89521-b74f-4630-b5e7-d50002eff455.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gen/GeneralModuleImprovement/controllers/CalculatingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gen/GeneralModuleImprovement/controllers/ImprovementController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gen/GeneralModuleImprovement/entities/MapsCalculatingQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gen/GeneralModuleImprovement/entities/MapsImprovementQueue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gen/GeneralModuleImprovement/entities/RoundHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gen/GeneralModuleImprovement/entities/RoundHistory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gen/GeneralModuleImprovement/readers/CalculatingReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gen/GeneralModuleImprovement/readers/ImprovementReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gen/GeneralModuleImprovement/repositories/MapsCalculatingQueueRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gen/GeneralModuleImprovement/repositories/MapsImprovementQueueRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gen/GeneralModuleImprovement/services/CalculatingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gen/GeneralModuleImprovement/services/ImprovementService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/database/initDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database/initDB.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/database/testFillDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database/testFillDB.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/excel/adr.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/excel/headshots.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/excel/kills.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/excel/rating20.xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-sources/java/com/gen/GeneralModuleImprovement/entities/QMapsCalculatingQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/java/com/gen/GeneralModuleImprovement/entities/QMapsCalculatingQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,6 +176,17 @@
       <workItem from="1662798282385" duration="1118000" />
       <workItem from="1662811644691" duration="386000" />
       <workItem from="1662813631092" duration="1229000" />
+      <workItem from="1674390790392" duration="614000" />
+      <workItem from="1674908021514" duration="27000" />
+      <workItem from="1674908062225" duration="1205000" />
+      <workItem from="1675150873971" duration="1210000" />
+      <workItem from="1675183322193" duration="2461000" />
+      <workItem from="1675265409552" duration="1211000" />
+      <workItem from="1675404182468" duration="915000" />
+      <workItem from="1675679358032" duration="628000" />
+      <workItem from="1676133212450" duration="609000" />
+      <workItem from="1676224187892" duration="636000" />
+      <workItem from="1676226060117" duration="780000" />
     </task>
     <servers />
   </component>
@@ -211,9 +214,9 @@
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/generalModule$GeneralModuleApplication.ic" NAME="GeneralModuleApplication Coverage Results" MODIFIED="1659737161148" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/GeneralModule$GeneralModuleApplication.ic" NAME="GeneralModuleApplication Coverage Results" MODIFIED="1656529842262" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.gen.GeneralModule.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/generalModule$GeneralModuleApplication.ic" NAME="GeneralModuleApplication Coverage Results" MODIFIED="1659737161148" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
